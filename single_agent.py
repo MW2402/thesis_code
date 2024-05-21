@@ -4,7 +4,7 @@ from typing import Optional, List, Dict
 from openai import OpenAI
 
 # Initialize OpenAI client with an API key
-client = OpenAI(api_key="API_KEY")
+client = OpenAI(api_key=os.environ["OPENAI_API_KEY"])
 
 
 def get_chat_completion(messages: List[Dict[str, str]], model: str = 'gpt-4-turbo') -> str:
