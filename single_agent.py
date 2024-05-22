@@ -7,13 +7,13 @@ from openai import OpenAI
 client = OpenAI(api_key=os.environ["OPENAI_API_KEY"])
 
 
-def get_chat_completion(messages: List[Dict[str, str]], model: str = 'gpt-4-turbo') -> str:
+def get_chat_completion(messages: List[Dict[str, str]], model: str = 'gpt-4o') -> str:
     """
-    Generate a completion response from OpenAI's GPT-4-turbo model.
+    Generate a completion response from OpenAI's GPT-4o model.
 
     Args:
         messages (List[Dict[str, str]]): List of message dictionaries with role and content.
-        model (str): The name of the model to use. Defaults to 'gpt-4-turbo'.
+        model (str): The name of the model to use. Defaults to 'gpt-4o'.
 
     Returns:
         str: The content of the first choice's response.
@@ -42,14 +42,14 @@ def load_json_file(file_path: str) -> Dict:
 
 
 def summarize_article(text: str,
-                      model: str = 'gpt-4-turbo',
+                      model: str = 'gpt-4o',
                       additional_instructions: Optional[str] = None) -> str:
     """
-    Summarize a financial article using GPT-4-turbo.
+    Summarize a financial article using GPT-4o.
 
     Args:
         text (str): The content of the article to summarize.
-        model (str): The model to use for summarization. Defaults to 'gpt-4-turbo'.
+        model (str): The model to use for summarization. Defaults to 'gpt-4o'.
         additional_instructions (Optional[str]): Additional instructions for the summarization task.
 
     Returns:
