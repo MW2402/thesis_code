@@ -65,7 +65,8 @@ def refine_summary_with_feedback(text: str, model: str = 'gpt-4o') -> str:
     feedback = get_chat_completion(messages, model=model)
 
     # Refinement of the summary by the financial expert based on auditor feedback
-    final_agent_prompt = "Jesteś ekspertem finansowym. Podsumuj poniższy dokument finansowy w zwięzłych punktach. Pamiętaj, aby uwzględnić wszelkie informacje zwrotne przekazane przez drugiego agenta i poprawić poprzednie podsumowanie."
+    final_agent_prompt = "Jesteś ekspertem finansowym. Podsumuj poniższy dokument finansowy w zwięzłych punktach. " \
+                          "Pamiętaj, aby uwzględnić wszelkie informacje zwrotne przekazane przez drugiego agenta i poprawić poprzednie podsumowanie."
     messages = [{"role": "system", "content": final_agent_prompt},
                 {"role": "user", "content": f"Document:\n{text}\n\nFeedback:\n{feedback}\n\nSummary:\n{summary}"}]
     refined_summary = get_chat_completion(messages, model=model)
