@@ -7,7 +7,7 @@ from openai import OpenAI
 client = OpenAI(api_key="API_KEY")
 
 
-def get_chat_completion(messages: List[Dict[str, str]], model: str = 'gpt-4-turbo') -> str:
+def get_chat_completion(messages: List[Dict[str, str]], model: str = 'gpt-4o') -> str:
     """
     Generate a completion response from OpenAI's model.
 
@@ -41,13 +41,13 @@ def load_json_file(file_path: str) -> Dict:
     return data
 
 
-def refine_summary_with_feedback(text: str, model: str = 'gpt-4-turbo') -> str:
+def refine_summary_with_feedback(text: str, model: str = 'gpt-4o') -> str:
     """
     Generate and refine a summary based on feedback from a secondary agent.
 
     Args:
         text (str): The content of the financial document.
-        model (str): The model to use. Defaults to 'gpt-4-turbo'.
+        model (str): The model to use. Defaults to 'gpt-4o'.
 
     Returns:
         str: The refined summary of the document.
